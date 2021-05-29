@@ -1,0 +1,36 @@
+<%- include("header") -%>
+<div class="main">
+<h1>Home</h1>
+<p><%= p1.content %></p>
+<% for (var i=3 ; i<hi.length ;i++){ %>
+  <div class="item">
+    <h2><%= hi[i].title %></h2>
+    <p><%= hi[i].content.substring(0,100)+" ..." %><a class="mmm" href="http://localhost:5000/posts/<%=hi[i].title%>">Read More</a></p>
+  </div>
+<% } %>
+
+
+</div>
+<div id="cursor">
+
+</div>
+<br><br><br><br><br>
+<section class="footer">
+
+  <p>Copy right @ Divvela Vishnu Sai Kumar</p>
+  <div class="icons">
+    <a href="https://facebook.com/">Facebook</a>
+    <a href="https://twitter.com/">Twitter</a>
+    <a href="https://www.linkedin.com/">Linked In</a>
+  </div>
+</section>
+<script>
+  var cursor = document.getElementById("cursor");
+  document.onmousemove = function(e){
+    cursor.style.left = (e.pageX - 25) +"px";
+    cursor.style.top=(e.pageY-25)+"px";
+    cursor.style.display="block";
+  }
+</script>
+</body>
+</html>
